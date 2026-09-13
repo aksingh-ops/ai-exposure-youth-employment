@@ -13,13 +13,13 @@ Here's exactly how to get each one.
    (`YEAR` and `MONTH` are auto-included by default.)
 5. Submit the extract, wait for the completion email (can take minutes to hours
    depending on size), then download the `.dat` file from your extract history page.
-6. Also download the **DDI codebook** (small `.xml` file, same extract page) — this
+6. Also download the **DDI codebook** (small `.xml` file, same extract page) - this
    documents the exact column positions used in `scripts/01_parse_cps_data.py`. If IPUMS
    changes anything about extract formatting in the future, re-check this file against
    the column positions hardcoded in the script.
 7. Place the `.dat` file at `data/cps_00001.dat`.
 
-**Note:** IPUMS deletes extract files after 72 hours — save your own copy once downloaded.
+**Note:** IPUMS deletes extract files after 72 hours - save your own copy once downloaded.
 
 ## 2. `job_exposure.csv` (Anthropic Economic Index)
 
