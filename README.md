@@ -9,12 +9,12 @@ entirely from free, publicly available data instead of private company payroll r
 
 Recent Stanford research (Brynjolfsson, Chandar & Chen, 2025), using private ADP payroll
 data, found that young workers in AI-exposed occupations are being hired less than their
-older peers since generative AI's adoption — a 13-19% relative decline.
+older peers since generative AI's adoption - a 13-19% relative decline.
 
 **This project asks: is the same pattern detectable using only public data, and how does
 its size compare to the published, peer-reviewed finding?**
 
-This is **not** a replication — Stanford's underlying payroll data is private and cannot
+This is **not** a replication - Stanford's underlying payroll data is private and cannot
 be reproduced. It's an independent parallel investigation, using different data and a
 different (real, observed) exposure measure, to see whether the same signal is visible
 from the outside.
@@ -37,13 +37,13 @@ flowchart TD
 ## Data Sources
 
 Every dataset used is real, public, and independently verifiable. **None of the raw data
-files are included in this repo** (size and/or license terms) — see the links below and
+files are included in this repo** (size and/or license terms) - see the links below and
 `data/README.md` for exact steps to obtain each one.
 
 | Dataset | What it provides | Source |
 |---|---|---|
 | **IPUMS CPS** | Employment, age, occupation microdata, 2022-2026 (~6M records) | [cps.ipums.org](https://cps.ipums.org/cps/) (free registration required) |
-| **Anthropic Economic Index** | Real, observed AI (Claude) usage by occupation — not a predicted score | [huggingface.co/datasets/Anthropic/EconomicIndex](https://huggingface.co/datasets/Anthropic/EconomicIndex) (CC-BY license) |
+| **Anthropic Economic Index** | Real, observed AI (Claude) usage by occupation - not a predicted score | [huggingface.co/datasets/Anthropic/EconomicIndex](https://huggingface.co/datasets/Anthropic/EconomicIndex) (CC-BY license) |
 | **Census OCC-to-SOC Crosswalk** | Official mapping from Census's 4-digit occupation codes to 6-digit SOC codes | [census.gov code lists page](https://www.census.gov/topics/employment/industry-occupation/guidance/code-lists.html) → "2018 Census Occupation Code List with Crosswalk" |
 
 ## Repository Structure
@@ -83,7 +83,7 @@ python scripts/05_plot_results.py
 
 1. **Parse** ~6 million real CPS employment records using verified IPUMS column positions.
 2. **Merge** with real, observed AI usage data (not a predicted exposure score) via an
-   official government crosswalk — resolved a real coverage gap (68% → 94.9%) by properly
+   official government crosswalk - resolved a real coverage gap (68% → 94.9%) by properly
    aggregating broad/combined Census occupation codes per the standard SOC hierarchy.
 3. **Categorize** occupations by AI exposure, explicitly handling the ~30% of the
    workforce with exactly zero observed AI use as its own group (a "zero-inflated"
@@ -113,7 +113,7 @@ python scripts/05_plot_results.py
 - The Anthropic Economic Index measures Claude usage specifically, not AI usage broadly.
 - ~5% of matched employment could not be linked to a specific exposure score (occupations
   absent from Anthropic's published 756-occupation list).
-- October 2025 CPS data is missing (U.S. federal government shutdown) — a real, minor gap
+- October 2025 CPS data is missing (U.S. federal government shutdown) - a real, minor gap
   in the time series.
 - This is a descriptive/correlational analysis; it does not establish causation.
 
